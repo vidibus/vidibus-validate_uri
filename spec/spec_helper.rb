@@ -1,9 +1,9 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'vidibus-validate_uri'
-require 'spec'
-require 'spec/autorun'
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 
-Spec::Runner.configure do |config|
-  
-end
+require "rubygems"
+require "active_record"
+require "action_controller"
+require "vidibus-validate_uri"
+require "spec"
+require "spec/autorun"

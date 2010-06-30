@@ -5,12 +5,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "vidibus-validate_uri"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "andre@webwarelab.com"
-    gem.homepage = "http://github.com/webwarelab/vidibus-validate_uri"
+    gem.summary = %Q{Provides an URI validator for Rails 3.}
+    gem.description = %Q{Provides an URI validator for Rails 3.}
+    gem.email = "andre@vidibus.com"
+    gem.homepage = "http://github.com/vidibus/vidibus-validate_uri"
     gem.authors = ["Andre Pankratz"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "rspec"
+    gem.add_development_dependency "rails"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

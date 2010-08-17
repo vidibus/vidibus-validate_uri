@@ -6,8 +6,6 @@ module Vidibus
         
         def self.included(base)
           base.class_eval do
-
-            # Define some helper methods that should be available to helpers and views.
             helper_method :validate_uri
           end
         end

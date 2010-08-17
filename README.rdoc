@@ -1,16 +1,63 @@
 = vidibus-validate_uri
 
-Description goes here.
+This gem is part of the open source SOA framework Vidibus: http://www.vidibus.org
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.
+
+
+== Installation
+
+Add the dependency to the Gemfile of your application:
+
+  gem "vidibus-validate_uri"
+
+Then call bundle install on your console.
+
+
+== Usage
+
+To validate an URI in your ActiveModel record, simply add the uri validator to the field you want to validate as URI:
+
+  class Model
+    include Mongoid::Document
+    field :some_uri
+    validates :some_uri, :uri => true
+  end
+    
+To validate an URI in any model, include ActiveModel::Validations:
+
+  class Model
+    include ActiveModel::Validations
+    attr_accessor :uri
+    validates :some_uri, :uri => true
+  end
+  
+Just in case you'll need it, a method #valid_uri? is available to controllers that inherit from ActionController::Base. Use it like this:
+  
+  valid_uri?("something") # => false
+  
+
+=== Validation options
+
+To restrict validation to a certain protocol, provide a :protocol option:
+
+  validates :some_uri, :uri => { :protocol => :rtmp }
+  validates :some_uri, :uri => { :protocol => [:rtsp, :rtmp] }
+  
+To check if the uri is accessible over the network, provide an :accessible option:
+
+  validates :some_uri, :uri => { :accessible => true }
+
+Just like for any other ActiveModel validation, you may allow blank values by providing an :allow_blank option:
+
+  validates :some_uri, :uri => { :allow_blank => true }
+
+You may provide those validation options to the #valid_uri? method as well:
+
+  valid_uri?(your_uri, :accessible => true)
+  valid_uri?(your_uri, :protocol => :rtmp)
+  valid_uri?(your_uri, :protocol => [:rtsp, :rtmp])
+
 
 == Copyright
 

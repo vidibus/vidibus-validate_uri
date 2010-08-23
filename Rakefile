@@ -11,7 +11,10 @@ begin
     gem.homepage = "http://github.com/vidibus/vidibus-validate_uri"
     gem.authors = ["Andre Pankratz"]
     gem.add_development_dependency "rspec"
-    gem.add_dependency "rails", ">= 3.0.0.rc"
+    gem.add_development_dependency "relevance-rcov"
+    gem.add_development_dependency "rr"
+    gem.add_dependency "rails", "~> 3.0.0.rc"
+    
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

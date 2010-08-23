@@ -5,8 +5,12 @@ require "rubygems"
 require "active_support/core_ext"
 require "active_record"
 require "action_controller"
-require "vidibus-validate_uri"
 require "spec"
-require "spec/autorun"
+require "rr"
+require "vidibus-validate_uri"
 
 I18n.load_path += Dir[File.join('config', 'locales', '**', '*.{rb,yml}')]
+
+Spec::Runner.configure do |config|  
+  config.mock_with RR::Adapters::Rspec
+end

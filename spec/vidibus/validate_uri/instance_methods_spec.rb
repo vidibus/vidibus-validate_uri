@@ -178,6 +178,26 @@ describe "Vidibus::ValidateUri::InstanceMethods" do
         uri = "http://www.vidibus.zzz"
         test.valid_uri?(uri, :accessible => true).should be_false
       end
+      
+      it "should not perform accessibility check of syntactically invalud urls" do
+        uri = "http://invalid"
+        dont_allow(test).accessible_uri?
+        test.valid_uri?(uri, :accessible => true).should be_false
+      end
+      
+      it "should not perform accessibility check in test environment" do
+        ENV["RAILS_ENV"] = "test"
+        uri = "http://www.vidibus.zzz"
+        dont_allow(test).accessible_uri?
+        test.valid_uri?(uri, :accessible => true).should be_true
+      end
+      
+      it "should perform accessibility check in test environment if test option is given" do
+        ENV["RAILS_ENV"] = "test"
+        uri = "http://www.vidibus.zzz"
+        mock(test).accessible_uri?("http://www.vidibus.zzz") { false }
+        test.valid_uri?(uri, :accessible => true, :test => true).should be_false
+      end
     end
   end
 end

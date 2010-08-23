@@ -33,7 +33,7 @@ module Vidibus
         regexp = /^#{protocol_regexp}:\/\/(localhost|#{DOMAIN_REGEXP}|#{IP_REGEXP})#{PORT_REGEXP}#{PATH_REGEXP}#{PARAMS_REGEXP}#{FRAGMENT_REGEXP}$/i
         valid = uri.match(regexp) ? true : false
         
-        if options[:accessible] == true
+        if valid == true and options[:accessible] == true and (ENV["RAILS_ENV"] != "test" or options[:test] == true)
           valid = accessible_uri?(uri)
         end
         

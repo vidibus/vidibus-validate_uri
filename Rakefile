@@ -37,7 +37,7 @@ require "rake/rdoctask"
 Rake::RDocTask.new do |rdoc|
   version = File.exist?("VERSION") ? File.read("VERSION") : ""
   rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "vidibus-remote #{version}"
+  rdoc.title = "vidibus-validate_uri #{version}"
   rdoc.rdoc_files.include("README*")
   rdoc.rdoc_files.include("lib/**/*.rb")
   rdoc.options << "--charset=utf-8"

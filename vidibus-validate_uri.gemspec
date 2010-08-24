@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "config/locales/en.yml",
      "lib/vidibus-validate_uri.rb",
      "lib/vidibus/validate_uri.rb",
      "lib/vidibus/validate_uri/extensions.rb",

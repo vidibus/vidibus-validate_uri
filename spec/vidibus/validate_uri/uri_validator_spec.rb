@@ -17,13 +17,13 @@ describe "Vidibus::ValidateUri::UriValidator" do
   it "should add an error to model if URI is blank" do
     model.uri = nil
     model.should be_invalid
-    model.errors[:uri].should eql(["is not a valid uri"])
+    model.errors[:uri].should eql(["is invalid"])
   end
   
   it "should add an error to model if URI is invalid" do
     model.uri = "http://localhosts"
     model.should be_invalid
-    model.errors[:uri].should eql(["is not a valid uri"])
+    model.errors[:uri].should eql(["is invalid"])
   end
   
   it "should allow options" do

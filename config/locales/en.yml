@@ -2,4 +2,4 @@ en:
   activemodel:
     errors:
       messages:
-        invalid_uri: "is invalid"
+        invalid_uri: "is not a valid uri"

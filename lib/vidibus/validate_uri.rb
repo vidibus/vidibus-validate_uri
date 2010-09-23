@@ -1,4 +1,4 @@
-require "validate_uri/instance_methods"
+require "validate_uri/core"
 require "validate_uri/extensions"
 require "validate_uri/uri_validator"
 

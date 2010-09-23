@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andre Pankratz"]
-  s.date = %q{2010-08-24}
+  s.date = %q{2010-09-23}
   s.description = %q{It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.}
   s.email = %q{andre@vidibus.com}
   s.extra_rdoc_files = [
@@ -19,20 +19,23 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     ".rspec",
+     "Gemfile",
+     "Gemfile.lock",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "config/locales/en.yml",
      "lib/vidibus-validate_uri.rb",
      "lib/vidibus/validate_uri.rb",
+     "lib/vidibus/validate_uri/core.rb",
      "lib/vidibus/validate_uri/extensions.rb",
      "lib/vidibus/validate_uri/extensions/controller.rb",
-     "lib/vidibus/validate_uri/instance_methods.rb",
      "lib/vidibus/validate_uri/uri_validator.rb",
-     "spec/spec.opts",
      "spec/spec_helper.rb",
      "spec/vidibus/validate_uri/action_controller_spec.rb",
-     "spec/vidibus/validate_uri/instance_methods_spec.rb",
+     "spec/vidibus/validate_uri/core_spec.rb",
      "spec/vidibus/validate_uri/uri_validator_spec.rb",
      "vidibus-validate_uri.gemspec"
   ]
@@ -44,7 +47,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/vidibus/validate_uri/action_controller_spec.rb",
-     "spec/vidibus/validate_uri/instance_methods_spec.rb",
+     "spec/vidibus/validate_uri/core_spec.rb",
      "spec/vidibus/validate_uri/uri_validator_spec.rb"
   ]
 
@@ -54,20 +57,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<relevance-rcov>, [">= 0"])
-      s.add_development_dependency(%q<rr>, [">= 0"])
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.0.rc"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0.0"])
     else
       s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<relevance-rcov>, [">= 0"])
-      s.add_dependency(%q<rr>, [">= 0"])
-      s.add_dependency(%q<rails>, ["~> 3.0.0.rc"])
+      s.add_dependency(%q<rails>, ["~> 3.0.0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<relevance-rcov>, [">= 0"])
-    s.add_dependency(%q<rr>, [">= 0"])
-    s.add_dependency(%q<rails>, ["~> 3.0.0.rc"])
+    s.add_dependency(%q<rails>, ["~> 3.0.0"])
   end
 end
 

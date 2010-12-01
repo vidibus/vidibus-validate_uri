@@ -202,6 +202,13 @@ describe "Vidibus::ValidateUri::Core" do
       test.accessible_uri?(uri).should be_false
     end
 
+    it "should log error with Rails.logger, if available" do
+      uri = "http://www.vidibus.zzz"
+      mock(Rails).logger.any_number_of_times {true}
+      mock(Rails.logger).error.with_any_args
+      test.accessible_uri?(uri)
+    end
+
     it "should not perform accessibility check of syntactically invalid URIs" do
       uri = "http://invalid"
       dont_allow(URI).parse

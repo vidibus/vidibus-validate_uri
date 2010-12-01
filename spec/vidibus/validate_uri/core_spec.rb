@@ -192,6 +192,11 @@ describe "Vidibus::ValidateUri::Core" do
       test.accessible_uri?(uri).should be_true
     end
 
+    it "should validate https://encrypted.google.com" do
+      uri = "https://encrypted.google.com"
+      test.accessible_uri?(uri).should be_true
+    end
+
     it "should fail for http://www.vidibus.zzz" do
       uri = "http://www.vidibus.zzz"
       test.accessible_uri?(uri).should be_false

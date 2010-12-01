@@ -1,4 +1,4 @@
-require "net/http"
+require "net/https"
 require "uri"
 
 module Vidibus
@@ -41,9 +41,17 @@ module Vidibus
         _uri = URI.parse(uri)
         path = _uri.path.blank? ? "/" : _uri.path
         begin
-          Net::HTTP.start(_uri.host, _uri.port) { |http| http.head(path) }
+          http = Net::HTTP.new(_uri.host, _uri.port)
+          if _uri.scheme == "https"
+            http.use_ssl = true
+            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+          end
+          http.start { |http| http.head(path) }
           true
-        rescue
+        rescue => e
+          if Rails.logger
+            Rails.logger.error "Accessing #{_uri.host} on port #{_uri.port} failed: #{e.inspect}"
+          end
           false
         end
       end

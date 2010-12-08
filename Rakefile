@@ -13,8 +13,6 @@ begin
     gem.email = "andre@vidibus.com"
     gem.homepage = "http://github.com/vidibus/vidibus-validate_uri"
     gem.authors = ["Andre Pankratz"]
-    gem.add_development_dependency "rspec"
-    gem.add_dependency "rails", "~> 3.0.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

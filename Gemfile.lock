@@ -1,5 +1,5 @@
 GEM
-  remote: http://gemcutter.org/
+  remote: http://rubygems.org/
   specs:
     abstract (1.0.0)
     actionmailer (3.0.0.rc2)
@@ -79,7 +79,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
   rails (~> 3.0.0)
   relevance-rcov
   rr

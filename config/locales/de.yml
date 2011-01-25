@@ -1,0 +1,6 @@
+de:
+  activemodel:
+    errors:
+      messages:
+        invalid_uri: "ist ungültig"
+        inaccessible_uri: "ist nicht erreichbar"

@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{vidibus-validate_uri}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andre Pankratz"]
-  s.date = %q{2010-12-08}
+  s.date = %q{2011-01-25}
   s.description = %q{It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.}
   s.email = %q{andre@vidibus.com}
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "config/locales/de.yml",
     "config/locales/en.yml",
     "lib/vidibus-validate_uri.rb",
     "lib/vidibus/validate_uri.rb",

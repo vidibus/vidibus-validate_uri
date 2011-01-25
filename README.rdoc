@@ -1,6 +1,6 @@
-= vidibus-validate_uri
+= Vidibus::ValidateUri
 
-This gem is part of the open source SOA framework Vidibus: http://www.vidibus.org
+This gem is part of the open source SOA framework {Vidibus}[http://vidibus.org].
 
 It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.
 

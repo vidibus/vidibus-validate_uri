@@ -1,6 +1,5 @@
 en:
-  activemodel:
-    errors:
-      messages:
-        invalid_uri: "is invalid"
-        inaccessible_uri: "is inaccessible"
+  errors:
+    messages:
+      invalid_uri: "is invalid"
+      inaccessible_uri: "is inaccessible"

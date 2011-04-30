@@ -184,6 +184,11 @@ describe "Vidibus::ValidateUri::Core" do
       uri = "http://www.ali.baba.döner.de"
       test.valid_uri?(uri).should be_true
     end
+
+    it "should validate http://mydomain.local/WhatsUp" do
+      uri = "http://mydomain.local/WhatsUp"
+      test.valid_uri?(uri).should be_true
+    end
   end
 
   describe "#accessible_uri?" do

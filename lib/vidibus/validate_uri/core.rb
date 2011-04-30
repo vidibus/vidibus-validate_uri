@@ -6,10 +6,10 @@ module Vidibus
     module Core
 
       PORT_REGEXP = /(([:]\d+)?)/
-      DOMAIN_REGEXP = /([äüößa-z0-9\-]+\.?)*([äüößa-z0-9]{2,})\.([a-z]{2,}){1,2}/ # TODO: Add real IDN support
+      DOMAIN_REGEXP = /([äüößa-z0-9\-]+\.?)*([äüößa-z0-9]{2,})\.([a-z]{2,}){1,2}/i # TODO: Add real IDN support
       IP_REGEXP = /(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5])(?:\/(?:[12]?\d|3[012])|-(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5]))?/
-      PATH_REGEXP = /(\/[a-z0-9\-_\.\,\/]*)?/
-      PARAMS_REGEXP = /\/?(\?[a-z0-9\-_\&=\|]*)?/
+      PATH_REGEXP = /(\/[a-z0-9\-_\.\,\/]*)?/i
+      PARAMS_REGEXP = /\/?(\?[a-z0-9\-_\&=\|]*)?/i
       FRAGMENT_REGEXP = /(\#.*)?/
 
       # Returns true if given URI is valid.

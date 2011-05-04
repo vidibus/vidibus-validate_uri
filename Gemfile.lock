@@ -84,4 +84,4 @@ DEPENDENCIES
   rails (~> 3.0.0)
   relevance-rcov
   rr
-  rspec (~> 2.0.0.beta.20)
+  rspec (~> 2.0.0)

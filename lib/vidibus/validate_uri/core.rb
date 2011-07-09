@@ -46,9 +46,11 @@ module Vidibus
             http.use_ssl = true
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           end
-          http.start { |http| http.head(path) }
-          true
-        rescue => e
+          http.start do |http|
+            code = http.head(path).code
+            return (code and code.to_i < 400)
+          end
+        rescue SocketError => e
           if defined?(Rails) and Rails.logger
             Rails.logger.error "Accessing #{_uri.host} on port #{_uri.port} failed: #{e.inspect}"
           end

@@ -1,4 +1,4 @@
-= Vidibus::ValidateUri {http://travis-ci.org/vidibus/vidibus-validate_uri.png}[http://travis-ci.org/vidibus/vidibus-validate_uri]
+= Vidibus::ValidateUri {!http://travis-ci.org/vidibus/vidibus-validate_uri.png!}[http://travis-ci.org/vidibus/vidibus-validate_uri]
 
 It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.
 

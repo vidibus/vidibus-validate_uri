@@ -8,13 +8,6 @@ class Rails < OpenStruct
   def self.logger; end
 end
 
-def in_test_environment(&block)
-  e = ENV["RAILS_ENV"]
-  ENV["RAILS_ENV"] = "test"
-  yield
-  ENV["RAILS_ENV"] = e
-end
-
 describe "Vidibus::ValidateUri::Core" do
   let(:test) { Test.new }
 
@@ -222,14 +215,6 @@ describe "Vidibus::ValidateUri::Core" do
       uri = "http://invalid"
       dont_allow(URI).parse
       test.accessible_uri?(uri).should be_false
-    end
-
-    it "should not perform accessibility check in test environment" do
-      in_test_environment do
-        uri = "http://www.vidibus.zzz"
-        dont_allow(URI).parse
-        test.accessible_uri?(uri).should be_true
-      end
     end
   end
 end

@@ -38,7 +38,6 @@ module Vidibus
       #
       def accessible_uri?(uri)
         return false unless valid_uri?(uri)
-        return true if ENV["RAILS_ENV"] == "test"
         _uri = URI.parse(uri)
         path = _uri.path.blank? ? "/" : _uri.path
         begin

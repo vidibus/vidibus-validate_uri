@@ -31,7 +31,7 @@ class Model
 end
 ```
 
-Just in case you'll need it, a method #valid_uri? is available to controllers that inherit from ActionController::Base. Use it like this:
+Just in case you'll need it, a method `valid_uri?` is available to controllers that inherit from ActionController::Base. Use it like this:
 
 ```ruby
 valid_uri?("something") # => false
@@ -39,26 +39,26 @@ valid_uri?("something") # => false
 
 ### Validation options
 
-To restrict validation to a certain protocol, provide a :protocol option:
+To restrict validation to a certain protocol, provide a `:protocol` option:
 
 ```ruby
 validates :some_uri, :uri => {:protocol => :rtmp}
 validates :some_uri, :uri => {:protocol => [:rtsp, :rtmp]}
 ```
 
-To check if the uri is accessible over the network, provide an :accessible option:
+To check if the uri is accessible over the network, provide an `:accessible` option:
 
 ```ruby
 validates :some_uri, :uri => {:accessible => true}
 ```
 
-Just like for any other ActiveModel validation, you may allow blank values by providing an :allow_blank option:
+Just like for any other ActiveModel validation, you may allow blank values by providing an `:allow_blank` option:
 
 ```ruby
 validates :some_uri, :uri => {:allow_blank => true}
 ```
 
-You may provide those validation options to the `ruby valid_uri?` method as well:
+You may provide those validation options to the `valid_uri?` method as well:
 
 ```ruby
 valid_uri?(your_uri, :accessible => true)

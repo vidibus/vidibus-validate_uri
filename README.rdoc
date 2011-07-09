@@ -1,8 +1,15 @@
 = Vidibus::ValidateUri
 
-This gem is part of the open source SOA framework {Vidibus}[http://vidibus.org].
-
 It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.
+
+This gem is part of {Vidibus}[http://vidibus.org], an open source toolset for building distributed (video) applications.
+
+
+== Compatibility
+
+Vidibus::ValidateUri is tested against Ruby 1.8.7.
+
+http://travis-ci.org/vidibus/vidibus-validate_uri.png  {Build History}[http://travis-ci.org/vidibus/vidibus-validate_uri]
 
 
 == Installation
@@ -61,4 +68,4 @@ You may provide those validation options to the #valid_uri? method as well:
 
 == Copyright
 
-Copyright (c) 2010 Andre Pankratz. See LICENSE for details.
+Copyright (c) 2010-2011 Andre Pankratz. See LICENSE for details.

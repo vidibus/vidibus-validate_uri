@@ -50,7 +50,7 @@ module Vidibus
           http.start { |http| http.head(path) }
           true
         rescue => e
-          if Rails.logger
+          if defined?(Rails) and Rails.logger
             Rails.logger.error "Accessing #{_uri.host} on port #{_uri.port} failed: #{e.inspect}"
           end
           false

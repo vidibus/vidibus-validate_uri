@@ -4,6 +4,10 @@ class Test
   include Vidibus::ValidateUri::Core
 end
 
+class Rails < OpenStruct
+  def self.logger; end
+end
+
 def in_test_environment(&block)
   e = ENV["RAILS_ENV"]
   ENV["RAILS_ENV"] = "test"

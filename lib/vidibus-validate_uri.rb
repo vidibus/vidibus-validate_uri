@@ -1,9 +1,10 @@
-require "rails"
 require "active_support/core_ext"
+require "active_model"
 
-$:.unshift(File.join(File.dirname(__FILE__), "..", "lib", "vidibus"))
-require "validate_uri"
+require "vidibus/validate_uri"
 
-module Vidibus::ValidateUri
-  class Engine < ::Rails::Engine; end
+if defined?(Rails)
+  module Vidibus::ValidateUri
+    class Engine < ::Rails::Engine; end
+  end
 end

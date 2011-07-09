@@ -9,7 +9,7 @@ class Rails < OpenStruct
 end
 
 describe "Vidibus::ValidateUri::Core" do
-  let(:test) { Test.new }
+  let(:test) {Test.new}
 
   describe "#valid_uri?" do
     it "should validate http://mydomain.local" do

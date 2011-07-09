@@ -7,17 +7,17 @@ class Model
 end
 
 class SecureModel < Model
-  validates :uri, :uri => { :protocol => "https" }
+  validates :uri, :uri => {:protocol => "https"}
 end
 
 class AccessibleModel < Model
-  validates :uri, :uri => { :accessible => true }
+  validates :uri, :uri => {:accessible => true}
 end
 
 describe "Vidibus::ValidateUri::UriValidator" do
-  let(:model) { Model.new }
-  let(:secure_model) { SecureModel.new }
-  let(:accessible_model) { AccessibleModel.new }
+  let(:model) {Model.new}
+  let(:secure_model) {SecureModel.new}
+  let(:accessible_model) {AccessibleModel.new}
 
   it "should be available as URI validator" do
     Model.validators_on(:uri).first.should be_a_kind_of(Vidibus::ValidateUri::UriValidator)

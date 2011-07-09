@@ -7,9 +7,9 @@ This gem is part of {Vidibus}[http://vidibus.org], an open source toolset for bu
 
 == Compatibility
 
-Vidibus::ValidateUri is tested against Ruby 1.8.7.
+http://travis-ci.org/vidibus/vidibus-validate_uri.png
 
-http://travis-ci.org/vidibus/vidibus-validate_uri.png  {Build History}[http://travis-ci.org/vidibus/vidibus-validate_uri]
+Vidibus::ValidateUri is tested against Ruby 1.8.7. {Build History}[http://travis-ci.org/vidibus/vidibus-validate_uri]
 
 
 == Installation

@@ -6,7 +6,7 @@ This gem is part of [Vidibus](http://vidibus.org), an open source toolset for bu
 
 ## Installation
 
-Add `ruby gem "vidibus-validate_uri"` to your Gemfile. Then call bundle install on your console.
+Add `gem "vidibus-validate_uri"` to your Gemfile. Then call `bundle install` on your console.
 
 
 ## Usage
@@ -68,4 +68,4 @@ valid_uri?(your_uri, :protocol => [:rtsp, :rtmp])
 
 ## Copyright
 
-Copyright (c) 2010-2011 Andre Pankratz. See LICENSE for details.
+&copy; 2010-2011 Andre Pankratz. See LICENSE for details.

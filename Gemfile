@@ -1,8 +1,4 @@
-source :rubygems
-gem "rails", "~> 3.0.0"
+source :gemcutter
 
-group :development do
-  gem "rspec", "~> 2.0.0"
-  gem "rr"
-  gem "relevance-rcov"
-end
+# Specify your gem's dependencies in vidibus-resource.gemspec
+gemspec

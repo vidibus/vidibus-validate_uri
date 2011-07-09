@@ -17,7 +17,7 @@ end
 describe "Vidibus::ValidateUri::UriValidator" do
   let(:model) { Model.new }
   let(:secure_model) { SecureModel.new }
-  let(:acessible_model) { AccessibleModel.new }
+  let(:accessible_model) { AccessibleModel.new }
 
   it "should be available as URI validator" do
     Model.validators_on(:uri).first.should be_a_kind_of(Vidibus::ValidateUri::UriValidator)
@@ -47,8 +47,8 @@ describe "Vidibus::ValidateUri::UriValidator" do
   end
 
   it "should add an error to model if URI is inaccessible" do
-    acessible_model.uri = "http://vidibus.zzz"
-    acessible_model.should be_invalid
-    acessible_model.errors[:uri].should eql(["is inaccessible"])
+    accessible_model.uri = "http://vidibus.zzz"
+    accessible_model.should be_invalid
+    accessible_model.errors[:uri].should eql(["is inaccessible"])
   end
 end

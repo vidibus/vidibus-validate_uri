@@ -189,23 +189,33 @@ describe "Vidibus::ValidateUri::Core" do
   end
 
   describe "#accessible_uri?" do
-    it "should validate http://www.vidibus.org" do
+    it "should validate http://www.vidibus.org which redirects permanently" do
       uri = "http://www.vidibus.org"
+      stub_request(:head, uri).to_return(:status => 301)
       test.accessible_uri?(uri).should be_true
     end
 
     it "should validate https://encrypted.google.com" do
       uri = "https://encrypted.google.com"
+      stub_request(:head, uri).to_return(:status => 200)
       test.accessible_uri?(uri).should be_true
     end
 
-    it "should fail for http://www.vidibus.zzz" do
+    it "should fail for http://www.vidibus.zzz which causes an SocketError" do
       uri = "http://www.vidibus.zzz"
+      stub.any_instance_of(Net::HTTP).head {raise SocketError}
       test.accessible_uri?(uri).should be_false
     end
 
-    it "should log error with Rails.logger, if available" do
+    it "should fail for http://vidibus.org/invalid which does not exist" do
+      uri = "http://vidibus.org/invalid"
+      stub_request(:head, uri).to_return(:status => 404)
+      test.accessible_uri?(uri).should be_false
+    end
+
+    it "should log HTTP errors with Rails.logger, if available" do
       uri = "http://www.vidibus.zzz"
+      stub.any_instance_of(Net::HTTP).head {raise SocketError}
       mock(Rails).logger.any_number_of_times {true}
       mock(Rails.logger).error.with_any_args
       test.accessible_uri?(uri)

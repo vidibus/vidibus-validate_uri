@@ -48,6 +48,7 @@ describe "Vidibus::ValidateUri::UriValidator" do
 
   it "should add an error to model if URI is inaccessible" do
     accessible_model.uri = "http://vidibus.zzz"
+    stub.any_instance_of(Net::HTTP).head {raise SocketError}
     accessible_model.should be_invalid
     accessible_model.errors[:uri].should eql(["is inaccessible"])
   end

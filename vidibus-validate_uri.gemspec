@@ -30,7 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "actionpack", "~> 3"
   s.add_development_dependency "webmock"
 
-  s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
-  s.require_path = 'lib'
+  s.files = Dir.glob("{lib,app,config}/**/*") + %w[LICENSE README.md Rakefile]
+  s.require_path = "lib"
 end

@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'vidibus-resource'
 
-  s.add_dependency 'rack', '~> 1.2.1'
+  s.add_dependency 'rack', '>= 1.2.1'
   s.add_dependency 'activesupport', '~> 3'
   s.add_dependency 'activemodel', '~> 3'
 

@@ -1,7 +1,7 @@
-require "active_support/core_ext"
-require "active_model"
+require 'active_support/core_ext'
+require 'active_model'
 
-require "vidibus/validate_uri"
+require 'vidibus/validate_uri'
 
 if defined?(Rails)
   module Vidibus::ValidateUri

@@ -1,6 +1,6 @@
 # encoding: UTF-8
-require "net/https"
-require "uri"
+require 'net/https'
+require 'uri'
 
 module Vidibus
   module ValidateUri
@@ -25,7 +25,7 @@ module Vidibus
 
         if protocol = options[:protocol]
           protocol = [protocol] unless p.is_a?(Array)
-          protocol_regexp = /#{protocol.join("|")}/
+          protocol_regexp = /#{protocol.join('|')}/
         else
           protocol_regexp = /\w+/
         end
@@ -39,10 +39,10 @@ module Vidibus
       def accessible_uri?(uri)
         return false unless valid_uri?(uri)
         _uri = URI.parse(uri)
-        path = _uri.path.blank? ? "/" : _uri.path
+        path = _uri.path.blank? ? '/' : _uri.path
         begin
           http = Net::HTTP.new(_uri.host, _uri.port)
-          if _uri.scheme == "https"
+          if _uri.scheme == 'https'
             http.use_ssl = true
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           end

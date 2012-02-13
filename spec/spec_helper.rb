@@ -1,12 +1,12 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require "rubygems"
-require "rspec"
-require "ostruct"
-require "webmock/rspec"
+require 'rubygems'
+require 'rspec'
+require 'ostruct'
+require 'webmock/rspec'
 
-require "vidibus-validate_uri"
+require 'vidibus-validate_uri'
 
 RSpec.configure do |config|
   config.include WebMock::API

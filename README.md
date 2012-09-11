@@ -68,4 +68,4 @@ valid_uri?(your_uri, :protocol => [:rtsp, :rtmp])
 
 ## Copyright
 
-&copy; 2010-2011 Andre Pankratz. See LICENSE for details.
+&copy; 2010-2012 Andre Pankratz. See LICENSE for details.

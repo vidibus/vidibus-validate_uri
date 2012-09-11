@@ -33,6 +33,21 @@ describe 'Vidibus::ValidateUri::Core' do
       test.valid_uri?(uri).should be_true
     end
 
+    it 'should validate http://www.mydomain.a-b.de' do
+      uri = 'http://www.mydomain.a-b.de'
+      test.valid_uri?(uri).should be_true
+    end
+
+    it 'should validate http://www.my-do-main.a-b.de' do
+      uri = 'http://www.my-do-main.a-b.de'
+      test.valid_uri?(uri).should be_true
+    end
+
+    it 'should fail for http://www.my-do-main.-ab.de' do
+      uri = 'http://www.my-do-main.-ab.de'
+      test.valid_uri?(uri).should be_false
+    end
+
     it 'should validate http://mydomain.com:8080' do
       uri = 'http://mydomain.com:8080'
       test.valid_uri?(uri).should be_true

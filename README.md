@@ -1,6 +1,6 @@
-# Vidibus::ValidateUri [![](http://travis-ci.org/vidibus/vidibus-validate_uri.png)](http://travis-ci.org/vidibus/vidibus-validate_uri) [![](http://stillmaintained.com/vidibus/vidibus-validate_uri.png)](http://stillmaintained.com/vidibus/vidibus-validate_uri)
+# Vidibus::ValidateUri [![](http://travis-ci.org/vidibus/vidibus-validate_uri.png)](http://travis-ci.org/vidibus/vidibus-validate_uri)
 
-It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.
+It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3 and 4.
 
 This gem is part of [Vidibus](http://vidibus.org), an open source toolset for building distributed (video) applications.
 
@@ -68,4 +68,4 @@ valid_uri?(your_uri, :protocol => [:rtsp, :rtmp])
 
 ## Copyright
 
-&copy; 2010-2012 Andre Pankratz. See LICENSE for details.
+&copy; 2010-2013 Andre Pankratz. See LICENSE for details.

@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/vidibus/vidibus-validate_uri'
   s.summary     = 'URI validation for Rails 3'
   s.description = 'It provides validation of URIs (URLs) to ActiveModel records and ActionControllers in Rails 3.'
+  s.license = 'MIT'
 
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'vidibus-resource'

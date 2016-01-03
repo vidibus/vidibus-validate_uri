@@ -43,7 +43,7 @@ describe 'Vidibus::ValidateUri::UriValidator' do
   it 'should add an error if uri does not match provided protocols' do
     secure_model.uri = 'http://www.vidibus.org'
     secure_model.should be_invalid
-    secure_model.errors[:uri].should have(1).error
+    secure_model.errors[:uri].count.should eq(1)
   end
 
   it 'should add an error to model if URI is inaccessible' do

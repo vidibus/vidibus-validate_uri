@@ -18,17 +18,17 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'vidibus-validate_uri'
 
-  s.add_dependency 'rack', '>= 1.2.1'
-  s.add_dependency 'activesupport', '~> 3'
-  s.add_dependency 'activemodel', '~> 3'
+  s.add_dependency 'rack'
+  s.add_dependency 'activesupport'
+  s.add_dependency 'activemodel'
 
-  s.add_development_dependency 'bundler', '>= 1.0.0'
+  s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'rspec', '~> 2'
   s.add_development_dependency 'rr'
-  s.add_development_dependency 'actionpack', '~> 3'
+  s.add_development_dependency 'actionpack'
   s.add_development_dependency 'webmock'
 
   s.files = Dir.glob('{lib,app,config}/**/*') + %w[LICENSE README.md Rakefile]
